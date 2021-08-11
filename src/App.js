@@ -1,5 +1,4 @@
 import React from 'react';
-import logo from './logo.png'
 import axios from 'axios'
 import { FaFacebook, FaTwitter, FaSync, FaQuoteLeft } from "react-icons/fa"
 
@@ -58,7 +57,7 @@ class App extends React.Component
     const tweetURL = `https://twitter.com/intent/tweet?text=${quote.quote} - ${quote.author}`;
 
     const facebookURL =
-      "https://www.facebook.com/sharer/sharer.php?u=https://codepen.io/juniHub/pen/yLOLLgx";
+      "https://www.facebook.com/sharer/sharer.php?u=https://aspire-to-inspire.netlify.app/";
 
     return (
      
@@ -84,7 +83,7 @@ class App extends React.Component
             </div>
           )}
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 m-8">
             <a
               id="tweet-quote"
               className="flex items-center justify-center border-2 rounded-full py-1 px-6"
@@ -118,7 +117,7 @@ class App extends React.Component
             </div>
            
           </main>
-        <footer className="pt-8">
+        <footer className="pt-4">
           <div className="bg-gray-900 text-gray-500 dark:text-gray-400 text-center p-4">
             Made with TailwindCSS by <a target="_blank" rel="noreferrer" href="https://hellojuninguyen.netlify.app/">juniNguyen.</a>
             </div>
