@@ -71,7 +71,7 @@ class App extends React.Component
          <main class="flex-grow">
         
           
-        <div className="text-gray-500 dark:text-gray-400 flex flex-col items-center justify-center gap-4 p-4 md:p-8" id="quote-box">
+        <div className="container text-gray-500 dark:text-gray-400 flex flex-col items-center justify-center gap-4 p-4 md:p-8" id="quote-box">
           {quote && (
             <div className="">
               <p id="text">
@@ -117,8 +117,8 @@ class App extends React.Component
             </div>
            
           </main>
-        <footer className="pt-4">
-          <div className="bg-gray-900 text-gray-500 dark:text-gray-400 text-center p-4">
+        <footer className="text-gray-500 dark:text-gray-400">
+          <div className="text-center text-xs p-2">
             Made with TailwindCSS by <a target="_blank" rel="noreferrer" href="https://hellojuninguyen.netlify.app/">juniNguyen.</a>
             </div>
         </footer>
