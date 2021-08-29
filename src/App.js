@@ -1,6 +1,8 @@
-import React from 'react';
+import React from 'react'
 import axios from 'axios'
 import { FaFacebook, FaTwitter, FaSync, FaQuoteLeft } from "react-icons/fa"
+
+
 
 const API =
   "https://gist.githubusercontent.com/camperbot/5a022b72e96c4c9585c32bf6a75f62d9/raw/e3c6895ce42069f0ee7e991229064f167fe8ccdc/quotes.json";
@@ -62,19 +64,14 @@ class App extends React.Component
     return (
      
       <body className="flex flex-col min-h-screen">
-        
-        
- <button onclick="responsiveVoice.speak('hello there, welcome to my digital garden!');" 
-        type="button" value="Play">Play</button>
-        
+                   
       <header className="flex flex-col items-center justify-center p-8">
            <img className="shadow-lg rounded-full inline-block w-40 h-40 m-8" src={`https://picsum.photos/600?grayscale&random=${index}`} alt="logo" />
         <h1 className="font-bold capitalize text-gray-500 dark:text-gray-400 text-center text-lg pt-4">Aspire to Inspire</h1>
-        </header>
+      </header>
 
          <main class="flex-grow">
         
-          
         <div className="container text-gray-500 dark:text-gray-400 flex flex-col items-center justify-center gap-4 p-4 md:p-8" id="quote-box">
           {quote && (
             <div className="">
