@@ -3,7 +3,7 @@ import axios from 'axios'
 import { FaFacebook, FaTwitter, FaSync, FaQuoteLeft } from "react-icons/fa"
 
 const API =
-  "http://numbersapi.com/random/trivia?json";
+  "https://gist.githubusercontent.com/camperbot/5a022b72e96c4c9585c32bf6a75f62d9/raw/e3c6895ce42069f0ee7e991229064f167fe8ccdc/quotes.json";
 
 class App extends React.Component
 {
@@ -11,9 +11,9 @@ class App extends React.Component
   state = {
     quotes: [
       {
-        text:
-          "",
-        number: 0
+        quote:
+          "Life isn’t about getting and having, it’s about giving and being.",
+        author: "Kevin Kruse"
       }
     ],
     index: 0
@@ -29,7 +29,7 @@ class App extends React.Component
       .then((res) => {
           this.setState(
           {
-            quotes: res.data
+            quotes: res.data.quotes
           },
           this.getRandomIndex
         );
@@ -54,7 +54,7 @@ class App extends React.Component
    
     const { quotes, index } = this.state;
     const quote = quotes[index];
-    const tweetURL = `https://twitter.com/intent/tweet?text=${quote.text} - ${quote.number}`;
+    const tweetURL = `https://twitter.com/intent/tweet?text=${quote.quote} - ${quote.author}`;
 
     const facebookURL =
       "https://www.facebook.com/sharer/sharer.php?u=https://aspire-to-inspire.netlify.app/";
@@ -62,6 +62,10 @@ class App extends React.Component
     return (
      
       <body className="flex flex-col min-h-screen">
+        
+        
+ <button onclick="responsiveVoice.speak('hello there, welcome to my digital garden!');" 
+        type="button" value="Play">Play</button>
         
       <header className="flex flex-col items-center justify-center p-8">
            <img className="shadow-lg rounded-full inline-block w-40 h-40 m-8" src={`https://picsum.photos/600?grayscale&random=${index}`} alt="logo" />
@@ -75,10 +79,10 @@ class App extends React.Component
           {quote && (
             <div className="">
               <p id="text">
-                <FaQuoteLeft/>&nbsp; {quote.text}
+                <FaQuoteLeft/>&nbsp; {quote.quote}
               </p>
               <cite id="author" className="float-right">
-                -{quote.number}
+                -{quote.author}
               </cite>
             </div>
           )}
