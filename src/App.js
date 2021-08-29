@@ -3,7 +3,7 @@ import axios from 'axios'
 import { FaFacebook, FaTwitter, FaSync, FaQuoteLeft } from "react-icons/fa"
 
 const API =
-  "https://gist.githubusercontent.com/camperbot/5a022b72e96c4c9585c32bf6a75f62d9/raw/e3c6895ce42069f0ee7e991229064f167fe8ccdc/quotes.json";
+  "http://numbersapi.com/random/trivia?json";
 
 class App extends React.Component
 {
@@ -11,9 +11,9 @@ class App extends React.Component
   state = {
     quotes: [
       {
-        quote:
-          "Life isn’t about getting and having, it’s about giving and being.",
-        author: "Kevin Kruse"
+        text:
+          "",
+        number: 0
       }
     ],
     index: 0
@@ -29,7 +29,7 @@ class App extends React.Component
       .then((res) => {
           this.setState(
           {
-            quotes: res.data.quotes
+            quotes: res.data
           },
           this.getRandomIndex
         );
@@ -54,7 +54,7 @@ class App extends React.Component
    
     const { quotes, index } = this.state;
     const quote = quotes[index];
-    const tweetURL = `https://twitter.com/intent/tweet?text=${quote.quote} - ${quote.author}`;
+    const tweetURL = `https://twitter.com/intent/tweet?text=${quote.text} - ${quote.number}`;
 
     const facebookURL =
       "https://www.facebook.com/sharer/sharer.php?u=https://aspire-to-inspire.netlify.app/";
@@ -75,10 +75,10 @@ class App extends React.Component
           {quote && (
             <div className="">
               <p id="text">
-                <FaQuoteLeft/>&nbsp; {quote.quote}
+                <FaQuoteLeft/>&nbsp; {quote.text}
               </p>
               <cite id="author" className="float-right">
-                -{quote.author}
+                -{quote.number}
               </cite>
             </div>
           )}
